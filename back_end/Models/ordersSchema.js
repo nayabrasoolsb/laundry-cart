@@ -12,4 +12,4 @@ const ordersSchema = new Schema({
 
 })
 
-module.exports = mongoose.model("ordersModel",)
+module.exports = mongoose.model("ordersModel",ordersSchema)
