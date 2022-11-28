@@ -1,0 +1,18 @@
+#small-footer {
+  border: #707070;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: black;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  letter-spacing: 0.12px;
+}
+
+#copy-right {
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+}

@@ -1,0 +1,94 @@
+#sign-in-main {
+  width: 100%;
+  display: table;
+}
+
+#sign-in-main>#sign-in-row {
+  display: table-row;
+  height: 670px;
+}
+
+#sign-in-main>#sign-in-row>#left-half #title {
+  width: 411px;
+  text-align: left;
+  font: normal normal 900 100px/120px Avenir;
+  letter-spacing: 0px;
+  color: #5861AE;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+#sign-in-main>#sign-in-row>#right-half {
+  width: 50%;
+  /* margin-left: 50%; */
+  display: table-cell;
+  height: inherit;
+  background: #f5f5fb 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+#sign-in-main>#sign-in-row>#left-half {
+  /* width: 50%; */
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+
+  display: table-cell;
+  height: 670px;
+}
+
+#sign-in-main>#sign-in-row>#left-half {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+#title-div {
+  float: left;
+}
+
+#title-about {
+  font: normal normal normal 20px/26px Avenir;
+  letter-spacing: 0.8px;
+  color: #565657;
+  text-transform: capitalize;
+  opacity: 1;
+  padding: 22px 0 50px 0;
+  box-sizing: border-box;
+}
+
+#account-creation {
+  font: normal normal normal 16px/26px Avenir;
+  letter-spacing: 0.64px;
+  color: #565657;
+  text-transform: capitalize;
+}
+
+#reg-button {
+  text-align: center;
+  border: 2px solid #4552C1;
+  border-radius: 4px;
+  height: 50px;
+  width: 150px;
+  font: normal normal bold 18px/25px Open Sans;
+  letter-spacing: 0.3px;
+  color: #4552C1;
+  opacity: 1;
+}
+
+#reg-button a {
+  text-decoration: none;
+  line-height: 50px;
+  /* text-align: center; */
+}
+
+#right-half input {
+
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  border-color: 2px solid #77838F;
+  /* background-color: #eee; */
+
+}
