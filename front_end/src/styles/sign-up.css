@@ -139,7 +139,9 @@
   text-align: center;
 }
 
-#parent-reg>#reg-right-half #reg-right-btm-flex>#reg-btn a {
+#parent-reg>#reg-right-half #reg-right-btm-flex>#reg-btn button {
+  background-color: #5861AE;
+  border: none;
   color: #FFFFFF;
   text-decoration: none;
 }
