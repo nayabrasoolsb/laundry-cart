@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-#parent>.child>.flex-children>#title {
+#parent>.child .flex-children>#title {
   width: 411px;
   text-align: left;
   font: normal normal 900 100px/120px Avenir;
@@ -24,7 +24,7 @@
   opacity: 1;
 }
 
-#parent>.child>.flex-children>#title-about {
+#parent>.child .flex-children>#title-about {
   font: normal normal normal 20px/26px Avenir;
   letter-spacing: 0.8px;
   color: #565657;
@@ -34,14 +34,14 @@
   box-sizing: border-box;
 }
 
-#parent>.child>.flex-children>#account-creation {
+#parent>.child .flex-children>#account-creation {
   font: normal normal normal 16px/26px Avenir;
   letter-spacing: 0.64px;
   color: #565657;
   text-transform: capitalize;
 }
 
-#parent>.child>.flex-children>#reg-button {
+#parent>.child .flex-children>#reg-button {
   text-align: center;
   border: 2px solid #4552C1;
   border-radius: 4px;
@@ -71,11 +71,11 @@
   background: #B9C0FD1A 0% 0% no-repeat padding-box;
 }
 
-#parent>#right-half>.flex-children {
+#parent>#right-half .flex-children {
   width: 400px;
 }
 
-#parent>#right-half>.flex-children>#sign-in-text {
+#parent>#right-half .flex-children>#sign-in-text {
   font-size: 40px;
   letter-spacing: 1.28px;
   color: #4552C1;
@@ -83,7 +83,7 @@
   font: normal normal medium 16px/26px Avenir;
 }
 
-#parent>#right-half>.flex-children>#password-reset {
+#parent>#right-half .flex-children>#password-reset {
   color: #4552C1;
   float: right;
   font-size: 17px;
@@ -102,17 +102,20 @@
 
 #parent>#right-half #sign-in-btn {
   width: 150px;
-  font-size: 15px;
   height: 50px;
   margin-top: 50px;
   text-align: center;
-  font: normal normal bold 15px/20px Open Sans;
-  letter-spacing: 0.3px;
-  color: #FFFFFF;
   background-color: #4552C1;
   border-radius: 4px;
 }
 
-#parent>#right-half #sign-in-btn>div {
-  margin-top: 12px;
+#parent>#right-half #sign-in-btn>button {
+  height: 50px;
+  line-height: 50px;
+  background-color: #4552C1;
+  border: none;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0.3px;
+  font: normal normal bold 15px/20px Open Sans;
 }
