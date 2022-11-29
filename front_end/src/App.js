@@ -1,6 +1,4 @@
 import "./App.css";
-import "./styles/nav-bar.css";
-import "./styles/sign-in.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
