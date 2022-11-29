@@ -1,12 +1,19 @@
-import "../styles/footer.css"
+import "../styles/footer.css";
 
-import React from 'react'
+import Info from "./Info";
+import React from "react";
+import SmallFooter from "./SmallFooter";
 
 export default function Footer() {
   return (
-    <div id="footer">
-      <span id="footer-head">Now Refer & Earn ₹500 for every referral*</span><br/>
-      <span id="footer-terms">* Terms and conditions will be applied</span>
-    </div>
-  )
+    <footer>
+      <div id="footer">
+        <span id="footer-head">Now Refer & Earn ₹500 for every referral*</span>
+        <br />
+        <span id="footer-terms">* Terms and conditions will be applied</span>
+      </div>
+      <Info />
+      <SmallFooter />
+    </footer>
+  );
 }
