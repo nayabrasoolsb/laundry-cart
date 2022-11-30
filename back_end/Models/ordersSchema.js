@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
 const ordersSchema = new Schema({
-    dateAndTime : {timestamps : true},
+    dateAndTime : Date,
     storeLocation : String,
     city : String,
-    storePhone : Number,
+    storePhone : String ,
     totalItems : Number,
     price : Number,
-    status : String,
+    status : String
 
 })
 
