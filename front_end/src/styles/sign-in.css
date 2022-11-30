@@ -1,0 +1,121 @@
+#parent {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#parent>.child {
+  height: 680px;
+}
+
+#parent>.child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#parent>.child .flex-children>#title {
+  width: 411px;
+  text-align: left;
+  font: normal normal 900 100px/120px Avenir;
+  letter-spacing: 0px;
+  color: #5861AE;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+#parent>.child .flex-children>#title-about {
+  font: normal normal normal 20px/26px Avenir;
+  letter-spacing: 0.8px;
+  color: #565657;
+  text-transform: capitalize;
+  opacity: 1;
+  padding: 22px 0 50px 0;
+  box-sizing: border-box;
+}
+
+#parent>.child .flex-children>#account-creation {
+  font: normal normal normal 16px/26px Avenir;
+  letter-spacing: 0.64px;
+  color: #565657;
+  text-transform: capitalize;
+}
+
+#parent>.child .flex-children>#reg-button {
+  text-align: center;
+  border: 2px solid #4552C1;
+  border-radius: 4px;
+  height: 50px;
+  width: 150px;
+  font: normal normal bold 18px/25px Open Sans;
+  letter-spacing: 0.3px;
+  color: #4552C1;
+  opacity: 1;
+  margin-top: 13px;
+}
+
+#reg-button a {
+  text-decoration: none;
+  line-height: 50px;
+}
+
+#right-half input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  border-color: 2px solid #b2adad;
+}
+
+#parent>#right-half {
+  background: #B9C0FD1A 0% 0% no-repeat padding-box;
+}
+
+#parent>#right-half .flex-children {
+  width: 400px;
+}
+
+#parent>#right-half .flex-children>#sign-in-text {
+  font-size: 40px;
+  letter-spacing: 1.28px;
+  color: #4552C1;
+  text-transform: uppercase;
+  font: normal normal medium 16px/26px Avenir;
+}
+
+#parent>#right-half .flex-children>#password-reset {
+  color: #4552C1;
+  float: right;
+  font-size: 17px;
+  font-weight: 600;
+  font: normal normal medium 16px/26px Avenir;
+}
+
+#parent>#right-half input {
+  font: normal normal normal 17px/27px Open Sans;
+  color: #77838F;
+  font-size: 18px;
+  height: 35px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+#parent>#right-half #sign-in-btn {
+  width: 150px;
+  height: 50px;
+  margin-top: 50px;
+  text-align: center;
+  background-color: #4552C1;
+  border-radius: 4px;
+}
+
+#parent>#right-half #sign-in-btn>button {
+  height: 50px;
+  line-height: 50px;
+  background-color: #4552C1;
+  border: none;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 0.3px;
+  font: normal normal bold 15px/20px Open Sans;
+}

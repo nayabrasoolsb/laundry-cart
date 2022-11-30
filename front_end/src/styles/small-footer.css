@@ -1,0 +1,10 @@
+#small-footer {
+  border: #707070;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: black;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  letter-spacing: 0.12px;
+}
