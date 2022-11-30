@@ -9,6 +9,7 @@ export default function RightHalf() {
     district: "",
     address: "",
     pincode: "",
+    password:""
   });
   function changeHandler(e) {
     e.preventDefault();
@@ -88,6 +89,16 @@ export default function RightHalf() {
                   onChange={(e) => changeHandler(e)}
                 />
               </div>
+              <div>
+              <input
+                  value={userData.password}
+                  name="password"
+                  placeholder="Password"
+                  type="text"
+                  onChange={(e) => changeHandler(e)}
+                />
+              </div>
+              
             </div>
           </div>
 
