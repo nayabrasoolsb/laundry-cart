@@ -9,8 +9,9 @@ export default function RightHalf() {
     district: "",
     address: "",
     pincode: "",
-    password:""
+    password: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
   function changeHandler(e) {
     e.preventDefault();
     setUserData((oldUserData) => ({
@@ -90,15 +91,21 @@ export default function RightHalf() {
                 />
               </div>
               <div>
-              <input
+                <input
                   value={userData.password}
                   name="password"
                   placeholder="Password"
-                  type="text"
+                  type={showPassword?"text": "password"}
                   onChange={(e) => changeHandler(e)}
                 />
+                <span id="lock">
+                  <img
+                    onClick={() => setShowPassword(!showPassword)}
+                    src="./padlock.png"
+                    alt="lock img"
+                  />
+                </span>
               </div>
-              
             </div>
           </div>
 

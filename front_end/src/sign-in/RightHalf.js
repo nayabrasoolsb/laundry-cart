@@ -5,13 +5,15 @@ export default function RightHalf() {
     mobile: "",
     password: "",
   });
-  function changeHandler(e) {
+  const [showPassword, setShowPassword] = useState(false);
+  async function changeHandler(e) {
     setData((oldData) => ({ ...oldData, [e.target.name]: e.target.value }));
   }
   function submitHandler(e) {
     e.preventDefault();
-    console.log(data)
+    console.log(data);
   }
+  // console.log(data.password)
   // console.log(data);
   return (
     <div id="right-half" className="child">
@@ -31,10 +33,19 @@ export default function RightHalf() {
             <input
               value={data.password}
               name="password"
-              type="text"
+              type={showPassword ? "password" : "text"}
               placeholder="Password"
-              onChange={(e) => changeHandler(e)}
+              onChange={(e) => {
+                changeHandler(e);
+              }}
             />
+            <span id="lock">
+              <img
+                onClick={() => setShowPassword(!showPassword)}
+                src="./padlock.png"
+                alt="lock img"
+              />
+            </span>
           </div>
           <div id="password-reset">Forgot Password?</div>
         </div>
