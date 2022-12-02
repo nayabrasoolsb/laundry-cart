@@ -1,8 +1,19 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+function login(data){
+  return fetch('http://localhost:5000/api/v1/login',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'Accept':'application/json'
+    },
+    body:JSON.stringify(data)
+  })
+  .then(res=>res.json())
+}
 export default function RightHalf() {
   const [data, setData] = useState({
-    mobile: "",
+    email: "",
     password: "",
   });
   function changeHandler(e) {
@@ -13,15 +24,28 @@ export default function RightHalf() {
     console.log(data)
   }
   // console.log(data);
+  
+const navigate = useNavigate();
   return (
     <div id="right-half" className="child">
-      <form onSubmit={(e) => submitHandler(e)}>
+      <form action="#" method="POST" onSubmit={(e) => {
+        e.preventDefault()
+        login(data)
+        .then(data=>{
+          if(data.success){
+            localStorage.setItem('session',data.token)
+            navigate('/landingpage')
+            return
+          }
+          alert('Login failed')
+        })
+        }}>
         <div className="flex-children">
           <div id="sign-in-text">Sign in</div>
           <div>
             <input
-              value={data.mobile}
-              name="mobile"
+              value={data.email}
+              name="email"
               type="text"
               placeholder="Mobile/Email"
               onChange={(e) => changeHandler(e)}

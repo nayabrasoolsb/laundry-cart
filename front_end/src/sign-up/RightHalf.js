@@ -21,7 +21,7 @@ export default function RightHalf() {
   return (
     <div id="reg-right-half" className="child-reg">
       <div>
-        <form>
+        <form >
           <div id="reg-content">
             <div id="reg-title">REGISTER</div>
             <div id="reg-grid">
