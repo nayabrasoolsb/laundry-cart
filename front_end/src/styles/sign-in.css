@@ -63,7 +63,6 @@
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
-  border-bottom-style: groove;
   border-color: 2px solid #b2adad;
 }
 
@@ -97,7 +96,7 @@
   font-size: 18px;
   height: 35px;
   margin: 20px 0;
-  width: 100%;
+  width: 90%;
 }
 
 #parent>#right-half #sign-in-btn {
@@ -118,4 +117,13 @@
   color: #FFFFFF;
   letter-spacing: 0.3px;
   font: normal normal bold 15px/20px Open Sans;
+}
+#lock{
+  margin-left: 8px;
+  margin-top: 5px;
+
+}
+#lock>img{
+  height: 25px;
+  margin-bottom: -5px;
 }

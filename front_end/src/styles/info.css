@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: end;
+  justify-content: flex-end;
 
 }
 
