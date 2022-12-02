@@ -19,7 +19,7 @@ export default function RightHalf() {
       [e.target.name]: e.target.value,
     }));
   }
-  console.log(userData);
+  // console.log(userData);
   return (
     <div id="reg-right-half" className="child-reg">
       <div>

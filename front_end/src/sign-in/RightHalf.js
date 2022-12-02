@@ -33,7 +33,7 @@ export default function RightHalf() {
             <input
               value={data.password}
               name="password"
-              type={showPassword ? "password" : "text"}
+              type={showPassword ? "text" : "password"}
               placeholder="Password"
               onChange={(e) => {
                 changeHandler(e);
