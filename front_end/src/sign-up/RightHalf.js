@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Axios from "axios";
 
 export default function RightHalf() {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -19,11 +22,31 @@ export default function RightHalf() {
       [e.target.name]: e.target.value,
     }));
   }
+
+  const submithandler = (e) => {
+    e.preventDefault();
+    Axios.post("http://localhost:5000/api/v1/register", {
+      name: userData.name,
+      email: userData.email,
+      phone: userData.phone,
+      state: userData.state,
+      district: userData.district,
+      address: userData.address,
+      pincode: userData.pincode,
+      password: userData.password,
+    }).then((res) => console.log(res.data));
+    if(userData.sucsess){
+      navigate('/sign-in');
+    }
+    alert("Please enter Correct Details")
+    
+  };
+
   // console.log(userData);
   return (
     <div id="reg-right-half" className="child-reg">
       <div>
-        <form >
+      <form action="" method="" onSubmit={submithandler}>
           <div id="reg-content">
             <div id="reg-title">REGISTER</div>
             <div id="reg-grid">

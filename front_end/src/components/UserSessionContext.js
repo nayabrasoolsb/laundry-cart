@@ -11,8 +11,8 @@ function getUserSessionDetails(){
         return fetch(`http://localhost:5000/api/v1/users?token=${token}`)
         .then(res => res.json())
         .then(data=>{
-            if(data.user){
-                resolve(data.user)
+            if(data.userDetails){
+                resolve(data.userDetails)
                 return
             }
             return(new Error('User not logged in'))
@@ -27,19 +27,23 @@ const UserSessionContext = React.createContext();
 export default function UserSessionContextProvider({children}){
 
     const [userDetails, setUserDetails] = useState(null)
+    const [isUserLoaded, setIsUserLoaded] = useState(false)
 
     useEffect(()=>{
     getUserSessionDetails()
     .then(userDetails =>{
+        setIsUserLoaded(true)
         setUserDetails(userDetails)
-    } )
+    } ).catch(err => {
+        setIsUserLoaded(true)
+    })
 },[])
 return <UserSessionContext.Provider value={{
     userDetails
 }}>
-    {children}
+    {isUserLoaded ? children : 'Loading...'}
     </UserSessionContext.Provider>
 }
 
 
-const useSessionContext = () => useContext(UserSessionContext)
+export const useSessionContext = () => useContext(UserSessionContext)

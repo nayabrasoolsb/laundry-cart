@@ -7,11 +7,16 @@ const connect = require("./connection/connect");
 const bcrypt = require('bcrypt');
 const postRoutes = require("./routes/posts");
 const secret = "RESTAPI";
+const cors = require('cors');
 var jwt = require('jsonwebtoken');
-const ordersRoute = require("./Routes/createOrder")
 
 
-app.use("/create",ordersRoute)
+
+
+app.use(cors({
+    origin:'*'
+}));
+
 app.use("/api/v1/posts", (req, res, next) => {
     if (req.headers.authorization) {
         const token = req.headers.authorization;
@@ -26,8 +31,7 @@ app.use("/api/v1/posts", (req, res, next) => {
                         message: "invalid token"
                     })
                 }
-                req.user = decoded.data;
-                next();
+                console.log(decodedToken);
             });
 
         } else {
@@ -38,6 +42,7 @@ app.use("/api/v1/posts", (req, res, next) => {
         }
     }
 })
+
 
 
 app.use("/api/v1",loginRoutes);
