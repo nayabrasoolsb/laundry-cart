@@ -17,7 +17,7 @@ router.post("/register", body('email').isEmail(),
          if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
          }
-         const { name, email, password, addres, pin, phone } = req.body;
+         const { name, email, phone,state,district, addres, pincode, password} = req.body;
 
          let user = await User.findOne({ email });
 
@@ -40,6 +40,10 @@ router.post("/register", body('email').isEmail(),
                name,
                email,
                phone,
+               state,
+               district,
+               addres,
+               pincode,
                password: hash
             })
 
@@ -87,15 +91,15 @@ router.post("/login", body('email').isEmail(),async (req, res) => {
                return res.status(500).json({
                   status: "failed",
                   message: err.message
-               });
+                });
             }
             if(result){
-               const token = jwt.sign({
+               const token =  jwt.sign({
                   exp: Math.floor(Date.now() / 1000) + (60 * 60),
                   data: user._id
                 }, secret);
                   return res.status(401).json({
-                  status: "sucess",
+                  success:true,  
                   message:"login sucessfull",
                   token
                });
