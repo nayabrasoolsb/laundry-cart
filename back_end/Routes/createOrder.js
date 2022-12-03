@@ -7,8 +7,9 @@ router.use(bodyparser.json())
 
 router.post("/",async(req,res)=>{
     try{
-        console.log(req.body)
-        const orders = await Orders.create(req.body)
+        // console.log(req.body)
+        const orders = await (await Orders.create(req.body)).populate("address")
+        console.log(orders)
         res.status(200).json({
             status : "Sucess",
             orders

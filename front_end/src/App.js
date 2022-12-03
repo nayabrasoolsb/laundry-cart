@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import React from "react";
 import Register from "./sign-up/Register";
 import SignInPage from "./sign-in/SignInPage";
+import CreateOrder from "./createOrder/CreateOrder";
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
             <Route path="sign-in" element={<SignInPage />} />
             <Route path="register" element={<Register />} />
           </Route>
+          <Route path="create-order" element = {<CreateOrder/>}/>
         </Routes>
       </BrowserRouter>
+ 
     </>
   );
 }

@@ -3,15 +3,21 @@ const app = express();
 const mongoose = require("mongoose");
 const loginRoutes = require("./routes/login");
 const userRoutes = require("./routes/user");
-const connect = require("./connection/connect");
+const connect = require("./connections/connect");
 const bcrypt = require('bcrypt');
 const postRoutes = require("./routes/posts");
 const secret = "RESTAPI";
 var jwt = require('jsonwebtoken');
 const ordersRoute = require("./Routes/createOrder")
+const getProducts = require("./Routes/Products")
+const cors = require("cors")
+
+
+app.use(cors())
 
 
 app.use("/create",ordersRoute)
+app.use("/createOrder",getProducts)
 app.use("/api/v1/posts", (req, res, next) => {
     if (req.headers.authorization) {
         const token = req.headers.authorization;

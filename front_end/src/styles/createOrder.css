@@ -1,0 +1,281 @@
+h1,h2,h3,h4,h5,h6,body,ul,li,p,input{
+    margin: 0;
+    padding: 0;
+}
+
+#search{
+    width: 1295px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    float: right;
+}
+
+#createText{
+position: relative;
+top: -9px;
+width: 162px;
+height: 27px;
+text-align: left;
+font: normal normal 600 16px/48px Open Sans;
+letter-spacing: 0px;
+color: #1E2022;
+opacity: 1;
+}
+
+#iconImg{
+    top: 128px;
+left: 1197px;
+width: 200px;
+height: 25px;
+opacity: 1;
+}
+
+#iconImage{
+    top: 128px;
+left: 1201px;
+width: 14px;
+height: 14px;
+background: transparent 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+#line{
+    color: #605959;
+}
+
+
+#table{
+float: right;
+top: 177px;
+left: 108px;
+width: 1295px;
+height: 472px;
+margin-bottom: 18.4px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #E0E0E0;
+border-radius: 2px;
+opacity: 1;
+}
+
+#type,#quant,#wash,#price{
+top: 190px;
+left: 132px;
+width: 162px;
+height: 27px;
+text-align: left;
+font: normal normal 600 16px/48px Open Sans;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 1;
+}
+
+
+
+.product, .head{
+    display: flex;
+    justify-content: space-around;
+}
+
+.product{
+    padding: 10px 0px;
+    border: 1px solid #E0E0E0;
+}
+.head{
+/* position: absolute;
+top: 176px;
+left: 108px; */
+width: 1295px;
+height: 50px;
+/* UI Properties */
+background: #2F2F2F 0% 0% no-repeat padding-box;
+border: 1px solid #E0E0E0;
+border-radius: 2px;
+opacity: 1;
+}
+.heroImg{
+width: 45px;
+height: 43px;
+background: transparent 0% 0% no-repeat padding-box;
+border-radius: 2px;
+opacity: 1;
+}
+
+.productName{
+position: relative;
+top: -16px;
+left: -62px;
+width: 42px;
+height: 19px;
+text-align: left;
+font: normal normal 600 14px/48px Open Sans;
+letter-spacing: 0px;
+color: #5861AE;
+opacity: 1;
+}
+
+.description{
+position: relative;
+top: 5px;
+left: -172px;
+width: 193px;
+height: 14px;
+text-align: left;
+font: normal normal normal 10px/48px Open Sans;
+letter-spacing: 0px;
+color: #76788B;
+opacity: 1;
+}
+
+.quantity{
+position: relative;
+right : 145px;
+width: 63px;
+height: 26px;
+margin: 10px;
+background: #FFFFFF 0% 0%  padding-box;
+border: 1px solid #5861AE;
+border-radius: 2px;
+opacity: 1;
+}
+
+.washImg{
+cursor: pointer;
+top: 257px;
+left: 696px;
+width: 25px;
+height: 29px;
+background: transparent 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.ironImg{
+cursor: pointer;
+top: 258px;
+left: 799px;
+width: 26px;
+height: 26px;
+background: transparent 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.towelImg{
+cursor: pointer;
+top: 259px;
+left: 899px;
+width: 28px;
+height: 28px;
+background: transparent 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.bleachImg{
+cursor: pointer;
+top: 258px;
+left: 1018px;
+width: 16px;
+height: 26px;
+background: transparent 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.reset{
+    cursor: pointer;
+    top: 500px;
+        left: 1305px;
+        width: 81px;
+        height: 32px;
+        border: 1px solid #5861AE;
+        border-radius: 4px;
+        opacity: 1;
+}
+
+.textBtn{
+position: relative;
+bottom: 15px;
+left : 15px;
+width: 37px;
+height: 19px;
+text-align: left;
+font: normal normal 600 14px/48px Open Sans;
+letter-spacing: 0px;
+color: #5861AE;
+opacity: 1;
+}
+
+.ans{
+top: 345px;
+left: 1132px;
+width: 18px;
+height: 24px;
+/* UI Properties */
+text-align: left;
+font: normal normal normal 18px/24px Open Sans;
+letter-spacing: 0.43px;
+color: #605959;
+opacity: 0.73;
+}
+.btn {
+    border : none;
+    background: none;
+    padding: 0;
+}
+
+#btncontainer{
+    width: 1295px;
+    margin-bottom: 70px;
+}
+
+#cancel{
+    position: relative;
+    right: 15px;
+    float: right;
+width: 107px;
+height: 32px;
+border: 1px solid #5861AE;
+border-radius: 4px;
+opacity: 1;
+}
+
+#proceed{
+float: right;
+width: 107px;
+height: 32px;
+background: #5861AE 0% 0% no-repeat padding-box;
+border: 1px solid #5861AE;
+border-radius: 4px;
+opacity: 1;
+}
+
+#proceedText{
+position: relative;
+top: -16px;
+left: 20px;
+width: 55px;
+height: 19px;
+text-align: left;
+font: normal normal 600 14px/48px Open Sans;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 1;
+}
+
+#cancelText{
+position: relative;
+top: -15px;
+left: 20px;
+width: 45px;
+height: 19px;
+text-align: left;
+font: normal normal 600 14px/48px Open Sans;
+letter-spacing: 0px;
+color: #5861AE;
+opacity: 1;
+}
+
+#orderfooter{
+    position: absolute;
+    top :690px;
+    width: 100%;
+
+}
