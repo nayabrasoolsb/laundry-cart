@@ -17,7 +17,7 @@ router.post("/register", body('email').isEmail(),
          if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
          }
-         const { name, email, phone,state,district, addres, pincode, password} = req.body;
+         const { name, email, phone,state,district, address, pincode, password} = req.body;
 
          let user = await User.findOne({ email });
 
@@ -42,7 +42,7 @@ router.post("/register", body('email').isEmail(),
                phone,
                state,
                district,
-               addres,
+               address,
                pincode,
                password: hash
             })

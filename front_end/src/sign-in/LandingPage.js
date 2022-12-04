@@ -7,10 +7,12 @@ export default function Landingpage(){
     useEffect(() => {
         console.log(userDetails)
         if (!userDetails) {
+            alert('youre not logged in taking you to the sign in page' )
             navigate('/')
         }
-    }, [])
+    },[])
     return <div>
+        {/* <button onClick={localStorage.removeItem('session')}>LOG OUT</button> */}
         hey, let's create order now
     </div>
 }
