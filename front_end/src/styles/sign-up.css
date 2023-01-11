@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   height: 680px;
+  margin-top: 60px;
 }
 
 #parent-reg>div {
@@ -17,6 +18,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#parent-reg>.child-reg>.flex-children {
+  padding: 8px 15px;
 }
 
 #parent-reg>.child-reg>.flex-children>#title {
@@ -70,12 +75,12 @@
 
 #parent-reg>#reg-right-half #reg-grid {
   display: grid;
-  grid-gap: 40px 120px;
+  grid-gap: 40px 8vw;
   grid-template-columns: auto auto;
 }
 
 #parent-reg>#reg-right-half #reg-grid>div {
-  width: 322px;
+  width: 25vw;
 }
 
 #parent-reg>#reg-right-half #reg-grid input {
@@ -144,4 +149,15 @@
   border: none;
   color: #FFFFFF;
   text-decoration: none;
+}
+
+.err {
+  color: red;
+  font-size: 14px;
+  padding-top: 7px;
+  letter-spacing: 0.7px;
+}
+
+.bg-red {
+  border: 2px solid red;
 }

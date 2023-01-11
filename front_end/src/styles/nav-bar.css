@@ -1,9 +1,12 @@
 #nav-bar {
-  height: 80px;
+  height: 60px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 2px 48px #0000000F;
+  box-shadow: 1px 3px 40px #0000000F;
   opacity: 1;
   box-sizing: border-box;
+  position:fixed;
+  z-index:1030;
+  top:0;
 }
 
 header {
@@ -11,7 +14,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 30px 10%;
+  padding: 30px 5%;
 }
 
 header #heading {
