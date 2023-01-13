@@ -16,23 +16,54 @@ export default function RightHalf() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [check, setCheck] = useState(false);
-  const [emainExist, setEmailExist] = useState(false);
-  const [passLen, setPassLen] = useState(false);
+  const [err, setErr] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    state: "",
+    district: "",
+    address: "",
+    pincode: "",
+    password: "",
+  });
   function changeHandler(e) {
-    if (e.target.name === "email") {
-      setEmailExist(false);
-    }
-    if (e.target.name === "password") {
-      if (e.target.value.length < 6) {
-        setPassLen(true);
-      } else {
-        setPassLen(false);
-      }
-    }
+    // setting the changes
     setUserData((oldUserData) => ({
       ...oldUserData,
       [e.target.name]: e.target.value,
     }));
+    // to check empty fields
+    if (!e.target.value) {
+      let finalStr = e.target.name.split("");
+      finalStr[0] = finalStr[0].toUpperCase();
+      finalStr = finalStr.join("");
+      setErr((prevErr) => ({
+        ...prevErr,
+        [e.target.name]: `${finalStr} cannot be empty`,
+      }));
+    }else{
+      setErr((prevErr) => ({
+        ...prevErr,
+        [e.target.name]: "",
+      }));
+    }
+    // mail validation
+    if (e.target.name === "email" && !e.target.value.includes("@")) {
+      setErr((prevErr) => ({ ...prevErr, email: "email should include @" }));
+      return;
+    }
+    // password validation
+    if (e.target.name === "password") {
+      if (e.target.value.length < 8) {
+        setErr((prevErr) => ({
+          ...prevErr,
+          password: "Password cannot be less than 8 characters",
+        }));
+      } else {
+        setErr((prevErr) => ({ ...prevErr, password: "" }));
+      }
+      return;
+    }
   }
   const options = {
     method: "POST",
@@ -44,24 +75,28 @@ export default function RightHalf() {
   };
   const submithandler = (e) => {
     e.preventDefault();
+    let errCheck = false
+    for (const key in err) {
+      if(err[key]){
+        errCheck = true;
+      }
+    }
+    if(errCheck){
+      return alert("please resolve the errors")
+    }
     if (!check) {
       return alert("please agree to the terms and conditions");
     }
-    // Axios.post("http://localhost:3004/api/v1/register", userData)
-    //   .then((res) => console.log(res.data))
-    //   .catch(err=>console.log(err))
-    // // if(userData.success){
-    // //   navigate('/sign-in');
-    // // }
     fetch("http://localhost:3004/api/v1/register", options)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
 
         if (data.status && data.status === "success") {
+          alert("registration succesful")
           navigate("/sign-in");
         } else if (data.message && data.message === "email already exists") {
-          setEmailExist(true);
+          setErr((prevErr) => ({ ...prevErr, email: data.message }));
           // alert("email already exists please login from the sign in page");
         } else {
           alert("Please enter Correct Details");
@@ -85,7 +120,9 @@ export default function RightHalf() {
                   placeholder="Name"
                   type="text"
                   onChange={(e) => changeHandler(e)}
+                  className={err.name ? "error" : ""}
                 />
+                {err.name && <div className="err">{err.name}</div>}
               </div>
               <div>
                 <input
@@ -94,12 +131,9 @@ export default function RightHalf() {
                   placeholder="Email"
                   type="text"
                   onChange={(e) => changeHandler(e)}
+                  className={err.email ? "error" : ""}
                 />
-                {emainExist && (
-                  <div className="err">
-                    Email already exists, please try to login
-                  </div>
-                )}
+                {err.email && <div className="err">{err.email}</div>}
               </div>
               <div>
                 <input
@@ -108,7 +142,9 @@ export default function RightHalf() {
                   placeholder="Phone"
                   type="text"
                   onChange={(e) => changeHandler(e)}
+                  className={err.phone ? "error" : ""}
                 />
+                {err.phone && <div className="err">{err.phone}</div>}
               </div>
               <div>
                 <input
@@ -117,7 +153,9 @@ export default function RightHalf() {
                   placeholder="State"
                   type="text"
                   onChange={(e) => changeHandler(e)}
+                  className={err.state ? "error" : ""}
                 />
+                {err.state && <div className="err">{err.state}</div>}
               </div>
               <div>
                 <input
@@ -126,7 +164,9 @@ export default function RightHalf() {
                   placeholder="District"
                   type="text"
                   onChange={(e) => changeHandler(e)}
+                  className={err.district ? "error" : ""}
                 />
+                {err.district && <div className="err">{err.district}</div>}
               </div>
               <div>
                 <input
@@ -135,7 +175,9 @@ export default function RightHalf() {
                   placeholder="Address"
                   type="text"
                   onChange={(e) => changeHandler(e)}
+                  className={err.address ? "error" : ""}
                 />
+                {err.address && <div className="err">{err.address}</div>}
               </div>
               <div>
                 <input
@@ -144,7 +186,9 @@ export default function RightHalf() {
                   placeholder="Pincode"
                   type="text"
                   onChange={(e) => changeHandler(e)}
+                  className={err.pincode ? "error" : ""}
                 />
+                {err.pincode && <div className="err">{err.pincode}</div>}
               </div>
               <div>
                 <input
@@ -153,6 +197,7 @@ export default function RightHalf() {
                   placeholder="Password"
                   type={showPassword ? "text" : "password"}
                   onChange={(e) => changeHandler(e)}
+                  className={err.password ? "error" : ""}
                 />
                 <span id="lock">
                   <img
@@ -160,11 +205,7 @@ export default function RightHalf() {
                     src="./padlock.png"
                     alt="lock img"
                   />
-                  {passLen && (
-                    <div className="err">
-                      Password should not be less than 6 characters
-                    </div>
-                  )}
+                  {err.password && <div className="err">{err.password}</div>}
                 </span>
               </div>
             </div>
