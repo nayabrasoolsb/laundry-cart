@@ -7,10 +7,12 @@ router.use(bodyParser.json());
 const User = require("../models/users");
 const jwt = require("jsonwebtoken");
 const secret = "RESTAPI";
+const cors = require("cors");
+router.use(cors())
 router.post(
   "/register",
   body("email").isEmail(),
-  body("password").isLength({ min: 6, max: 15 }),
+  body("password").isLength({ min: 8, max: 15 }),
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -103,8 +105,9 @@ router.post("/sign-in", body("email").isEmail(), async (req, res) => {
           secret,
         );
         return res.status(401).json({
-          status: "sucess",
+          status: "success",
           message: "login sucessfull",
+          user,
           token,
         });
       } else {
