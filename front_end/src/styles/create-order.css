@@ -1,0 +1,131 @@
+.create-order,
+.order-ctrl {
+  display: flex;
+}
+.create-order{
+  margin-top:60px;
+}
+
+.order-ctrl {
+  justify-content: flex-end;
+}
+
+#main-create {
+  width: 100%;
+}
+
+#body-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#body-header ul>li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+#body-header>#orders-div {
+  margin-left: 30px;
+  margin-right: auto;
+}
+
+#main-create>#body-header input {
+  width: 100%;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  border-color: 2px solid #e9eef3;
+  font: normal normal normal 17px/27px Open Sans;
+  letter-spacing: 0.6px;
+  color: #77838F;
+  background: url("../../public/search.png") 0% 0% no-repeat;
+  font-size: 16px;
+  outline: none;
+}
+
+#main-create>#body-header ul>li {
+  margin-right: 40px;
+}
+
+#main-create>#body-header ul>#search-li {
+  margin-right: 20%;
+}
+
+#table-div table {
+  width: 100%;
+}
+
+#table-div table th {
+  /* border: 2px solid black; */
+  height: 45px;
+  color: #FFFFFF;
+  font: normal normal 600 16px/48px Open Sans;
+  letter-spacing: 0px;
+  text-align: left;
+  margin: 0;
+  padding-left: 15px;
+}
+
+#table-div #table-head {
+  background-color: #2F2F2F;
+
+}
+
+#table-div>div {
+  margin-left: 30px;
+}
+
+#table-div table .product-types {
+  width: 30%;
+}
+
+#table-div table .quantity {
+  width: 15%;
+}
+
+#table-div table .wash-types {
+  width: 30%;
+}
+
+.product-div {
+  margin-left: 30px;
+}
+
+.order-ctrl .cancel {
+  border: 2px solid #5861AE;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.order-ctrl .cancel>button {
+  color: #5861AE;
+  background-color: rgb(255, 255, 255);
+}
+.order-ctrl .cancel>button:hover{
+  background-color: rgb(237, 235, 235);
+  transition: 0.2s ease-in;
+}
+
+.order-ctrl {
+  margin-top: 15px;
+}
+
+.order-ctrl button {
+  border: none;
+  font-size: 14px;
+  width: 107px;
+  height: 32px;
+  cursor: pointer;
+}
+.order-ctrl>div{
+  margin-right: 20px;
+}
+
+.order-ctrl .proceed button {
+  border-radius: 4px;
+  background-color: #5861AE;
+  color: white;
+}
