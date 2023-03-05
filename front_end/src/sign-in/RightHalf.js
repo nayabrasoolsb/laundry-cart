@@ -2,20 +2,12 @@ import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-async function login(data) {
-  return await fetch("http://localhost:3004/api/v1/sign-in", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }).then((res) => res.json());
-}
 export default function RightHalf() {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
+
   const [showPassword, setShowPassword] = useState(false);
   async function changeHandler(e) {
     setData((oldData) => ({ ...oldData, [e.target.name]: e.target.value }));
@@ -34,7 +26,7 @@ export default function RightHalf() {
       .then((data) => {
         if (data.status === "success") {
           localStorage.setItem("token", data.token);
-          localStorage.setItem("userName", data.user.name)
+          localStorage.setItem("user", JSON.stringify(data.user));
           navigate("/user");
           alert(data.message);
           return;
