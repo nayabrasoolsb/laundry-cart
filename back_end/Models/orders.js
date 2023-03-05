@@ -14,9 +14,12 @@ const productSchema = new Schema({
 const orderSchema = new Schema(
   {
     products: [],
+    orderId: { type: String, unique: true, required: true },
     storeLocation: { type: String, required: true },
-    storeAddress: { type: String, required: true },
-    phone: { type: String, required: true },
+    city: { type: String, required: true },
+    storePhone: { type: String, required: true },
+    totalItems: { type: String, required: true },
+    price: { type: String, required: true },
     user: { type: Schema.Types.ObjectId, ref: "User" },
   },
   { timestamps: true },
