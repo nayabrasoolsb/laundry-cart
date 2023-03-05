@@ -1,0 +1,104 @@
+.product-flex,
+.wash-type,
+.img-div,
+.price-div {
+  display: flex;
+
+}
+
+.price-div {
+  justify-content: space-around;
+}
+
+.product-flex {
+  padding: 15px 20px;
+  border: 1px solid #bdbaba;
+}
+
+.product-img {
+  width: 30%;
+}
+
+.product-img img {
+  height: 45px;
+  width: 43px;
+}
+
+.product-flex .qty-input {
+  width: 40%;
+  height: 23px;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #bdbaba;
+  border-radius: 3px;
+}
+
+.product-flex .product-qty {
+  width: 16%;
+}
+
+.product-flex .product-qty>div {
+  margin: 0 25px;
+}
+
+.product-flex>.product-img .product-name {
+  font: normal normal 600 14px/48px Open Sans;
+  display: inline-block;
+  vertical-align: center;
+  letter-spacing: 0px;
+  color: #5861AE;
+  margin-left: 15px;
+  font-weight: 700;
+}
+
+.product-flex>.wash-type {
+  width: 30%;
+}
+
+.product-flex>.wash-type>div {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.hyphon {
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.reset-btn>input {
+  color: #5861AE;
+  width: 9vw;
+  float: right;
+  height: 32px;
+  border: 2px solid #5861AE;
+  border-radius: 4px;
+  font-family: Open Sans;
+  font-weight: 600;
+  letter-spacing: 0px;
+  background-color: white;
+}
+
+.reset-btn {
+  margin-left: 16%;
+}
+
+.price-div>.reset-right {
+  margin-left: 15%;
+}
+
+.price-div .calc-num {
+  text-align: left;
+  font: normal normal 600 18px/24px Open Sans;
+  letter-spacing: 0.43px;
+  color: #221919;
+}
+
+.price-div .total {
+  font: normal normal bold 24px/33px Open Sans;
+  letter-spacing: 0.58px;
+  color: #5861AE;
+}
+.price-div .calc{
+  width: 10vw;
+}
