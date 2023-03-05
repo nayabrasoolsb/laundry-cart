@@ -26,10 +26,6 @@ function App() {
             <Route path="order-history" element={<OrderHistory />} />
             <Route path="create-order" element={<CreateOrder />} />
           </Route>
-          {/* <Route path="/user" element={<User />}>
-            <Route index element={<OrderHistory />} />
-            <Route path="order-history" element={<OrderHistory />} />
-          </Route> */}
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </BrowserRouter>

@@ -46,10 +46,11 @@ header #heading {
   opacity: 1;
 }
 
-#nav-bar>ul>#sign-in {
+#nav-bar>ul>#sign-in, #nav-bar>ul>li:last-child {
   background-color: #5861AE;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 #sign-in a{
   color : white;

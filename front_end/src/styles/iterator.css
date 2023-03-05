@@ -1,0 +1,57 @@
+.iterator-main {
+  display: flex;
+  margin: 15px 0;
+}
+
+hr {
+  color: rgb(199, 197, 197, 0.4);
+  margin-left: 3%;
+}
+
+.iterator-main>.product-type {
+  font: normal normal normal 18px/24px Open Sans;
+  letter-spacing: 0.43px;
+  color: #1B2734;
+  opacity: 1;
+  min-width: 65px;
+}
+
+.iterator-main>.wash-types {
+  text-align: left;
+  font: italic normal normal 16px/22px Open Sans;
+  letter-spacing: 0.38px;
+  color: #1B2734;
+}
+
+.iterator-main>div {
+  margin-right: 15%;
+}
+
+.iterator-main>div:last-child {
+  margin-right: 5%;
+  margin-left: auto;
+}
+.iterator-main>.calc{
+  min-width: 100px;
+  max-width: 150px;
+}
+.iterator-main>.calc>span:first-child {
+  display: inline-block;
+  min-width: 100px;
+  max-width: 150px;
+  text-align: left;
+  font: normal normal 600 16px/22px Open Sans;
+  letter-spacing: 0.38px;
+  color: #1B2734;
+}
+
+.iterator-main>.calc>span:last-child {
+  text-align: right;
+  /* min-width: 100px;
+  max-width: 150px; */
+  display: inline-block;
+  font: normal normal 600 20px/27px Open Sans;
+  letter-spacing: 0.48px;
+  color: #5861AE;
+  /* margin-left: 20%; */
+}
