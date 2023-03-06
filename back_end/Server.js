@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded())
+const dontenv = require("dotenv").config();
 
 app.use("/api/v1/user", (req, res, next) => {
   if (req.headers.authorization) {
