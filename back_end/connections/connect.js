@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+const dontenv = require("dotenv").config();
+
 mongoose
-  .connect("mongodb://localhost:27017/laundry")
-  .then(() => console.log("Connected to mongo"))
+  .connect(process.env.MONGODB_URL)
+  .then(() => console.log("Connected to mongoDB"))
   .catch((e) => console.log(e));

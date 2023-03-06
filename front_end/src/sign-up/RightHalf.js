@@ -41,7 +41,7 @@ export default function RightHalf() {
         ...prevErr,
         [e.target.name]: `${finalStr} cannot be empty`,
       }));
-    }else{
+    } else {
       setErr((prevErr) => ({
         ...prevErr,
         [e.target.name]: "",
@@ -75,14 +75,14 @@ export default function RightHalf() {
   };
   const submithandler = (e) => {
     e.preventDefault();
-    let errCheck = false
+    let errCheck = false;
     for (const key in err) {
-      if(err[key]){
+      if (err[key]) {
         errCheck = true;
       }
     }
-    if(errCheck){
-      return alert("please resolve the errors")
+    if (errCheck) {
+      return alert("please resolve the errors");
     }
     if (!check) {
       return alert("please agree to the terms and conditions");
@@ -93,7 +93,7 @@ export default function RightHalf() {
         // console.log(data);
 
         if (data.status && data.status === "success") {
-          alert("registration succesful")
+          alert("registration succesful");
           navigate("/sign-in");
         } else if (data.message && data.message === "email already exists") {
           setErr((prevErr) => ({ ...prevErr, email: data.message }));
@@ -221,7 +221,9 @@ export default function RightHalf() {
               </div>
             </div>
             <div id="reg-btn">
-              <button type="submit">Register</button>
+              <button style={{ cursor: "pointer" }} type="submit">
+                Register
+              </button>
             </div>
           </div>
         </form>

@@ -12,14 +12,12 @@ import Aside from "../components/Aside";
 import CreateSummery from "../components/CreateSummery";
 import { PriceContext } from "../App";
 import Products from "../components/Products";
-import { UserContext } from "../App";
+import SuccessPopup from "../components/SuccessPopup";
 import { useNavigate } from "react-router-dom";
 
 export default memo(function CreateOrder() {
   const navigate = useNavigate();
-  const userData = useContext(UserContext);
-  const newData = {...userData}
-  console.log(newData)
+
   const prices = useContext(PriceContext);
   useEffect(() => {
     if (!localStorage.getItem("token")) {
@@ -28,6 +26,7 @@ export default memo(function CreateOrder() {
   }, []);
   const [reset, setReset] = useState(false);
   const [summery, setSummery] = useState(false);
+  const [popup, setPopup] = useState(false);
   const [data, setData] = useState([
     {
       type: "Shirts",
@@ -86,7 +85,7 @@ export default memo(function CreateOrder() {
       bleach: false,
     },
   ]);
-  
+
   let productArr = [
     ["/images/shirt.jpg", "Shirts"],
     ["/images/t-shirt.jpg", "T shirts"],
@@ -111,6 +110,13 @@ export default memo(function CreateOrder() {
     },
     [reset, data],
   );
+  function resetEverything() {
+    setReset(true);
+  }
+  const response = useCallback(() => {
+    setSummery(false);
+    setPopup(true);
+  }, [summery]);
   return (
     <div className="create-order">
       <Aside path="create" />
@@ -146,11 +152,8 @@ export default memo(function CreateOrder() {
         <div className="product-div">
           {productArr.map((product, index) => (
             <Products
-              change={(type, value, nameOfProduct) =>
-                typeChangeHandler(type, value, nameOfProduct)
-              }
+              change={typeChangeHandler}
               reset={reset}
-              prices={prices}
               product={product}
               key={index}
             />
@@ -158,7 +161,7 @@ export default memo(function CreateOrder() {
         </div>
         <div className="order-ctrl">
           <div className="cancel">
-            <button title="reset everything" onClick={() => setReset(true)}>
+            <button title="reset everything" onClick={resetEverything}>
               Cancel
             </button>
           </div>
@@ -173,9 +176,10 @@ export default memo(function CreateOrder() {
         <CreateSummery
           onCancel={() => setSummery(false)}
           data={data}
-          prices={prices}
+          response={response}
         />
       )}
+      {popup && <SuccessPopup />}
     </div>
   );
 });

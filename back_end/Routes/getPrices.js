@@ -19,6 +19,7 @@ router.get("/", async(req, res) => {
     });
   }
 })
+/*
 router.post("/", async(req, res) => {
   try {
     const prices = await Prices.create(req.body);
@@ -34,5 +35,6 @@ router.post("/", async(req, res) => {
     });
   }
 })
+*/
 
 module.exports = router;

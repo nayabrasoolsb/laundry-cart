@@ -1,21 +1,13 @@
 import "../styles/create-summery.css";
 
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 
 import DataIterator from "./DataIterator";
 import { PriceContext } from "../App";
 
-export default function CreateSummery({ data, response, onCancel }) {
+export default function OrderSummery({ data, onCancel }) {
   let subTotal = useRef(0);
-  const prices = useContext(PriceContext);
-
-  const [loading, setLoading] = useState(false);
-
-  function orderId() {
-    let orId = "OR";
-    orId += Math.ceil(Math.random() * 199_999_999) + 100_000_000;
-    return orId;
-  }
+  const prices = useContext(PriceContext)
 
   const pickupCharges = 90;
   const dataIterator = data.map((product, index) => {
@@ -46,38 +38,6 @@ export default function CreateSummery({ data, response, onCancel }) {
   });
 
   const userData = JSON.parse(localStorage.getItem("user"));
-  const options = {
-    method: "POST",
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-      authorization: localStorage.getItem("token"),
-    },
-    body: JSON.stringify({
-      products: data,
-      storeLocation:"Jp Nagar",
-      city,
-      storePhone,
-      totalItems,
-      price: totalPrice,
-      orderId: orderId(),
-    }),
-  };
-  async function creatingOrder() {
-    setLoading(true);
-    await fetch("http://localhost:3004/api/v1/user/create", options)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if(data.status == "success"){
-          response()
-        }
-      })
-      .catch((err) => {
-        console.log("error is ", err);
-      });
-    setLoading(false);
-  }
 
   return (
     <div className="summery-main">
@@ -131,15 +91,7 @@ export default function CreateSummery({ data, response, onCancel }) {
             </div>
           </div>
         </div>
-        {loading ? (
-          <div>loading...</div>
-        ) : (
-          <div className="confirm">
-            <button disabled={totalPrice === 90} onClick={creatingOrder}>
-              Confirm
-            </button>
-          </div>
-        )}
+        
       </div>
     </div>
   );
