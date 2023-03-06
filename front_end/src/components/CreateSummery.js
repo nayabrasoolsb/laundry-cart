@@ -55,7 +55,7 @@ export default function CreateSummery({ data, response, onCancel }) {
     },
     body: JSON.stringify({
       products: data,
-      storeLocation:"Jp Nagar",
+      storeLocation: "Jp Nagar",
       city,
       storePhone,
       totalItems,
@@ -69,8 +69,8 @@ export default function CreateSummery({ data, response, onCancel }) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.status == "success"){
-          response()
+        if (data.status === "success") {
+          response();
         }
       })
       .catch((err) => {
@@ -135,7 +135,10 @@ export default function CreateSummery({ data, response, onCancel }) {
           <div>loading...</div>
         ) : (
           <div className="confirm">
-            <button disabled={totalPrice === 90} onClick={creatingOrder}>
+            <button
+              style={{ cursor: "pointer" }}
+              disabled={totalPrice === 90}
+              onClick={creatingOrder}>
               Confirm
             </button>
           </div>
