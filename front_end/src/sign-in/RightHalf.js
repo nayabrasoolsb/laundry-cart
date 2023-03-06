@@ -71,7 +71,9 @@ export default function RightHalf() {
         </div>
 
         <div id="sign-in-btn">
-          <button type="submit">Sign In</button>
+          <button style={{ cursor: "pointer" }} type="submit">
+            Sign In
+          </button>
         </div>
       </form>
     </div>
