@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 router.use(bodyParser.json());
-const Prices = require("../models/washTypePrices")
+const Prices = require("../models/washTypePrices.js")
 
 router.get("/", async(req, res) => {
   try {

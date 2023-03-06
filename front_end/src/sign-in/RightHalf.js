@@ -15,7 +15,7 @@ export default function RightHalf() {
   async function submitHandler(e) {
     e.preventDefault();
 
-    await fetch("http://localhost:3004/api/v1/sign-in", {
+    await fetch("https://laundry-service-app-by-nayabrasool-server.onrender.com/api/v1/sign-in", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
