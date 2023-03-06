@@ -1,9 +1,13 @@
 import "../styles/products.css";
 
-import React, {memo, useCallback, useEffect, useState} from "react";
+import React, {memo, useCallback, useContext, useEffect, useState} from "react";
 
-function Products({ product: [product, name], prices, reset, change }) {
+import { PriceContext } from "../App";
+
+function Products({ product: [product, name], reset, change }) {
   let x = "/images/";
+  const prices = useContext(PriceContext);
+
   const [washingMachine, setWashingMachine] = useState(false);
   const [ironing, setIroning] = useState(false);
   const [towel, setTowel] = useState(false);
