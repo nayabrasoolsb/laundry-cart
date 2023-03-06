@@ -11,22 +11,22 @@ router.post("/create", async (req, res) => {
       user: req.user,
     });
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       orders,
     });
   } catch (e) {
     res.status(500).json({
       status: "failed",
-      messege: e.errors,
+      messege: e,
     });
   }
 });
 
 router.get("/order-history", async (req, res) => {
   try {
-    const orders = await Orders.find({ user: req.user });
+    const orders = await Orders.find({ user: req.user }).sort({ createdAt: -1 });
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       orders,
     });
   } catch (error) {
