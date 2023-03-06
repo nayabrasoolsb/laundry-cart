@@ -16,7 +16,7 @@ function App() {
   const [prices, setPrices] = useState([]);
   useEffect(() => {
     (async () => {
-      await fetch("http://localhost:3004/api/v1/prices", {
+      await fetch("https://laundry-service-app-by-nayabrasool-server.onrender.com/api/v1/prices", {
         method: "get",
       })
         .then((res) => res.json())
