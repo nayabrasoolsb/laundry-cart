@@ -65,7 +65,7 @@ export default function CreateSummery({ data, response, onCancel }) {
   };
   async function creatingOrder() {
     setLoading(true);
-    await fetch("http://localhost:3004/api/v1/user/create", options)
+    await fetch("https://laundry-service-app-by-nayabrasool-server.onrender.com/api/v1/user/create", options)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -87,7 +87,7 @@ export default function RightHalf() {
     if (!check) {
       return alert("please agree to the terms and conditions");
     }
-    fetch("http://localhost:3004/api/v1/register", options)
+    fetch("https://laundry-service-app-by-nayabrasool-server.onrender.com/api/v1/register", options)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
