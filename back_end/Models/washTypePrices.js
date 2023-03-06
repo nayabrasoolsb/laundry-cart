@@ -9,13 +9,13 @@ const washTypePrices = {
 };
 
 const priceModel = new Schema({
-  Shirts: {required:true},
-  "T shirts": {required:true},
-  Trousers: {required:true},
-  Jeans: {required:true},
-  Boxers: {required:true},
-  Joggers: {required:true},
-  Others: {required:true},
+  Shirts: {type: "objectId",required:true},
+  "T shirts": {type: "objectId",required:true},
+  Trousers: {type: "objectId",required:true},
+  Jeans: {type: "objectId",required:true},
+  Boxers: {type: "objectId",required:true},
+  Joggers: {type: "objectId",required:true},
+  Others: {type: "objectId",required:true},
 });
 
 module.exports = mongoose.model("prices", priceModel);
