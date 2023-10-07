@@ -16,7 +16,6 @@ router.post(
   async (req, res) => {
     try {
       const errors = validationResult(req);
-      // console.log("hello")
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
@@ -45,7 +44,6 @@ router.post(
             message: err.message,
           });
         }
-        // console.log(err, hash);
         const user = await User.create({
           name,
           email,
@@ -89,7 +87,6 @@ router.post("/sign-in", body("email").isEmail(), async (req, res) => {
       });
     }
     bcrypt.compare(password, user.password, function (err, result) {
-      // result == true
       if (err) {
         return res.status(500).json({
           status: "failed",

@@ -13,7 +13,7 @@ const productSchema = new Schema({
 
 const orderSchema = new Schema(
   {
-    products: [],
+    products: [productSchema],
     orderId: { type: String, unique: true, required: true },
     storeLocation: { type: String, required: true },
     city: { type: String, required: true },

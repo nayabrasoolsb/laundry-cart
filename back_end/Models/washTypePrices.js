@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
+
 const washTypePrices = {
   "washing-machine": { type: String, required: true },
   ironing: { type: String, required: true },
@@ -9,13 +9,36 @@ const washTypePrices = {
 };
 
 const priceModel = new Schema({
-  Shirts: {type: "objectId",required:true},
-  "T shirts": {type: "objectId",required:true},
-  Trousers: {type: "objectId",required:true},
-  Jeans: {type: "objectId",required:true},
-  Boxers: {type: "objectId",required:true},
-  Joggers: {type: "objectId",required:true},
-  Others: {type: "objectId",required:true},
+  Shirts: {
+    type: washTypePrices,
+    required: true,
+  },
+  "T-shirts": {
+    type: washTypePrices,
+    required: true,
+  },
+  Trousers: {
+    type: washTypePrices,
+    required: true,
+  },
+  Jeans: {
+    type: washTypePrices,
+    required: true,
+  },
+  Boxers: {
+    type: washTypePrices,
+    required: true,
+  },
+  Joggers: {
+    type: washTypePrices,
+    required: true,
+  },
+  Others: {
+    type: washTypePrices,
+    required: true,
+  },
 });
 
-module.exports = mongoose.model("prices", priceModel);
+const PriceModel = mongoose.model('Price', priceModel);
+
+module.exports = PriceModel;
