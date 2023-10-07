@@ -7,7 +7,6 @@ const Prices = require("../models/washTypePrices.js")
 router.get("/", async(req, res) => {
   try {
     const prices = await Prices.find();
-    
     res.status(200).send({
       status:"success",
       prices

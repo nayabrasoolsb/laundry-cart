@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 
 router.get("/users", async (req, res) => {
   try {
-    // write the code to fetch all the users
     const users = await User.find();
     res.status(200).json({
       status: "Sucess",
@@ -24,7 +23,6 @@ router.get("/users", async (req, res) => {
 
 router.get("/users/:id", async (req, res) => {
   try {
-    // console.log(req.params);
     const users = await User.find({ _id: req.params.id });
     res.status(200).json({
       status: "Sucess",

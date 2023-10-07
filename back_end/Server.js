@@ -5,9 +5,9 @@ const secret = "RESTAPI";
 const jwt = require("jsonwebtoken");
 const connect = require("./connections/connect");
 const priceRoute = require("./Routes/getPrices")
-const loginRoute = require("./routes/login");
-const usersRoute = require("./routes/user");
-const orderRoute = require("./routes/orders");
+const loginRoute = require("./Routes/login");
+const usersRoute = require("./Routes/user");
+const orderRoute = require("./Routes/orders");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
