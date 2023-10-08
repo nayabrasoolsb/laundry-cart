@@ -8,7 +8,7 @@ const User = require("../models/users");
 const jwt = require("jsonwebtoken");
 const secret = "RESTAPI";
 const cors = require("cors");
-router.use(cors())
+router.use(cors());
 router.post(
   "/register",
   body("email").isEmail(),
